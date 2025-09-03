@@ -49,7 +49,7 @@ export function NavigationBar({ ...props }) {
           {...props}
           activeKey={active}
           onSelect={setActive}
-          defaultActiveKey=" "
+          defaultActiveKey="home"
         >
           {/* {eventKey?.map((item, i) => (
             <Nav.Item key={i} eventKey={item} className="p-2">
@@ -65,7 +65,7 @@ export function NavigationBar({ ...props }) {
           </Nav.Item> */}
           <Nav.Menu
             title="Skills"
-            className="bg-[url(./assets/img/banner-bg.png)]"
+            className=""
           >
             <Nav.Item as={Link} to={"skills/technical"} eventKey="technical">
               Technical Skills

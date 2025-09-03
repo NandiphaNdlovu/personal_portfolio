@@ -6,7 +6,7 @@ import { GiSkills } from "react-icons/gi";
 import { SlScreenSmartphone } from "react-icons/sl";
 
 export function SideNavbar() {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [activeKey, setActiveKey] = useState("1");
   return (
     <div className="w-[200px] h-full flex">
@@ -19,7 +19,7 @@ export function SideNavbar() {
       {/* <hr /> */}
       <Sidenav
         expanded={expanded}
-        defaultOpenKeys={["home", "home"]}
+        defaultOpenKeys={["1", "2"]}
         className="relative h-full top-0 bg-[url(./assets/img/banner-bg.png)]"
       >
         <Sidenav.Toggle
@@ -47,7 +47,7 @@ export function SideNavbar() {
               User Group
             </Nav.Item> */}
             <Nav.Menu
-              className="[&>.rs-nav-item-submenu]:bg-[url(./assets/img/banner-bg.png)] border"
+              className="nav-menu [&>.rs-nav-item-submenu]:bg-[url(./assets/img/banner-bg.png)]"
               placement="rightStart"
               eventKey="skills"
               title="Skills"

@@ -24,3 +24,27 @@
   src: url("./assets/font/06384_BUBBLEGU.ttf");
   font-weight: 300;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+
+.rs-sidenav .rs-dropdown .rs-dropdown-toggle {
+  background: transparent;
+  background-size: cover;
+  background-position: center;
+}
+
+.rs-sidenav .rs-dropdown .rs-dropdown-toggle:hover {
+  background: transparent;
+}
+
+.rs-sidenav .rs-dropdown-menu {
+  background-image: url(./assets/img/banner-bg.png);
+}
+
+.rs-sidenav .rs-sidenav-toggle .rs-btn {
+  background: none;
+}

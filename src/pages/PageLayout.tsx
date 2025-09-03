@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { NavigationBar } from "../components/Navbar/NavigationBar";
 import { SideNavbar } from "../components/SideNavbar/SideNavbar";
+import { PageFooter } from "../components/PageFooter/PageFooter";
 
 export function PageLayout() {
   return (
@@ -17,6 +18,9 @@ export function PageLayout() {
           <Outlet />
         </div>
         <div className="w-1/3" />
+      </div>
+      <div>
+        <PageFooter />
       </div>
     </div>
   );
