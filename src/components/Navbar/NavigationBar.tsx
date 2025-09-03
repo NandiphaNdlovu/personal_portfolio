@@ -14,9 +14,11 @@ function LeftSection() {
         <IoClose />
       </Navbar.Brand>
       <Divider vertical className="h-full w-fit" />
-      <div className="flex items-center h-full text-gray-400 gap-2">
-        <h4 className="text-black">Form: </h4>
-        <p>Some description</p>
+      <div
+        className="flex items-center h-full gap-2"
+        style={{ fontFamily: "bubblegums" }}
+      >
+        <h4 className="text-black">portfolio </h4>
       </div>
     </div>
   );
@@ -24,7 +26,7 @@ function LeftSection() {
 
 function RightSection() {
   return (
-    <div className="flex flex-row-2 gap-2 text-gray-400 items-center">
+    <div className="flex flex-row-2 gap-2 items-center ">
       <div>
         <p>Preview</p>
       </div>
@@ -36,17 +38,18 @@ function RightSection() {
 export function NavigationBar({ ...props }) {
   const [active, setActive] = useState("home");
   return (
-    <div className="border border-neutral-400 bg-white flex flex-cols-3 h-fit gap-6 justify-items-center items-center">
+    <div className="bg-[url(./assets/img/banner-bg.png)] flex flex-cols-3 h-fit gap-6 justify-items-center items-center text-[#c58aec]">
       <div className="w-full pl-2">
         <LeftSection />
       </div>
       <div>
         <Nav
+          className="bg-[url(./assets/img/banner-bg.png)]"
           appearance="pills"
           {...props}
           activeKey={active}
           onSelect={setActive}
-          defaultActiveKey="home"
+          defaultActiveKey=" "
         >
           {/* {eventKey?.map((item, i) => (
             <Nav.Item key={i} eventKey={item} className="p-2">
@@ -54,19 +57,26 @@ export function NavigationBar({ ...props }) {
             </Nav.Item>
           ))} */}
 
-          <Nav.Item as={Link} to={"/fields"} eventKey="/field">
-            Field
+          <Nav.Item as={Link} to={"/personal_portfolio/"} eventKey="home">
+            Home
           </Nav.Item>
-          <Nav.Item as={Link} to={"/workflow"} eventKey="workflow">
-            Workflow
+          {/* <Nav.Item as={Link} to={"/skills"} eventKey="skills">
+            Skills
+          </Nav.Item> */}
+          <Nav.Menu
+            title="Skills"
+            className="bg-[url(./assets/img/banner-bg.png)]"
+          >
+            <Nav.Item as={Link} to={"skills/technical"} eventKey="technical">
+              Technical Skills
+            </Nav.Item>
+            <Nav.Item as={Link} to={"skills/soft"} eventKey="soft">
+              Soft Skills
+            </Nav.Item>
+          </Nav.Menu>
+          <Nav.Item as={Link} to={"contact"} eventKey="contact">
+            Contact
           </Nav.Item>
-          <Nav.Item as={Link} to={"/permissions"} eventKey="permissions">
-            Permissions
-          </Nav.Item>
-          {/* <Nav.Menu icon={<EllipsisHIcon />} title="more...">
-            <Nav.Item icon={<DropboxIcon />}>dropbox</Nav.Item>
-            <Nav.Item icon={<FirefoxIcon />}>firefox</Nav.Item>
-          </Nav.Menu> */}
         </Nav>
       </div>
       <div className="flex w-full justify-end pr-2">

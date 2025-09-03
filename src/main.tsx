@@ -6,7 +6,7 @@ import { CustomProvider } from "rsuite";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <CustomProvider theme="light">
+    <CustomProvider theme="dark">
       <App />
     </CustomProvider>
   </StrictMode>

@@ -1,20 +1,23 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
 import { HomePage } from "./pages/HomePage/HomePage";
 import { PageLayout } from "./pages/PageLayout";
+import { SkillsLayout } from "./pages/Skills/SkillsLayout";
+import { ContactPage } from "./pages/Contact/ContactPage";
+import { TechnicalSkillsPage } from "./pages/Skills/TechnicalSkillsPage";
+import { SoftSkillsPage } from "./pages/Skills/SoftSkillsPage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<PageLayout />}>
-          <Route path="home" element={<HomePage />}>
-            {/* <Route path="nestedRoute1" element={<nestedRoute1Page />} /> */}
-            {/* <Route path="nestedRoute2" element={<nestedRoute2Page />} /> */}
+        <Route path="/personal_portfolio/" element={<PageLayout />}>
+          <Route path="/personal_portfolio/" element={<HomePage />} />
+          <Route path="skills/" element={<SkillsLayout />}>
+            <Route path="technical" element={<TechnicalSkillsPage />} />
+            <Route path="soft" element={<SoftSkillsPage />} />
           </Route>
-          {/* <Route path="workflow" element={<Workflows />} />
-          <Route path="permissions" element={<Permissions />} /> */}
+          <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>
     </Router>
