@@ -18,7 +18,7 @@ export function HomePage() {
     return () => {
       clearInterval(ticker);
     };
-  }, [text]);
+  }, [text, index]);
 
   const tick = () => {
     const i = loopNum % toRotate.length;

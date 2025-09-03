@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Nav, Sidenav } from "rsuite";
+import { Link } from "react-router-dom";
 
 import { BiHomeHeart } from "react-icons/bi";
 import { GiSkills } from "react-icons/gi";
@@ -19,7 +20,7 @@ export function SideNavbar() {
       {/* <hr /> */}
       <Sidenav
         expanded={expanded}
-        defaultOpenKeys={["1", "2"]}
+        defaultOpenKeys={["home"]}
         className="relative h-full top-0 bg-[url(./assets/img/banner-bg.png)]"
       >
         <Sidenav.Toggle
@@ -34,6 +35,8 @@ export function SideNavbar() {
           >
             <Nav.Item
               className="bg-[url(./assets/img/banner-bg.png)]"
+              as={Link}
+              to={"/personal_portfolio/"}
               eventKey="home"
               icon={
                 <span className="rs-icon">
@@ -53,11 +56,17 @@ export function SideNavbar() {
               title="Skills"
               icon={<GiSkills className="rs-icon" />}
             >
-              <Nav.Item eventKey="technical">Technical Skills</Nav.Item>
-              <Nav.Item eventKey="soft">Soft Skills</Nav.Item>
+              <Nav.Item as={Link} to={"skills/technical"} eventKey="technical">
+                Technical Skills
+              </Nav.Item>
+              <Nav.Item as={Link} to={"skills/soft"} eventKey="soft">
+                Soft Skills
+              </Nav.Item>
             </Nav.Menu>
             <Nav.Item
               className="bg-[url(./assets/img/banner-bg.png)]"
+              as={Link}
+              to={"contact"}
               eventKey="contact"
               icon={
                 <span className="rs-icon ">
