@@ -5,23 +5,25 @@ import { PageFooter } from "../components/PageFooter/PageFooter";
 
 export function PageLayout() {
   return (
-    <div className=" flex flex-row-2 w-full h-lvh ">
-      <div className="fixed w-full h-fit invisible md:visible">
-        <NavigationBar />
-      </div>
-      <div className="fixed w-fit h-full visible md:invisible">
-        <SideNavbar />
-      </div>
-      <div className="h-full flex flex-col-3 pt-15 w-full">
-        <div className="w-1/3" />
-        <div className="w-full h-full">
-          <Outlet />
+    <>
+      <div className="grid grid-row-3 w-full h-screen">
+        <div className="fixed w-full h-fit invisible md:visible">
+          <NavigationBar />
         </div>
-        <div className="w-1/3" />
+        <div className="fixed w-fit h-full visible md:invisible">
+          <SideNavbar />
+        </div>
+        <div className="h-full flex flex-col-3 pt-15 w-full">
+          <div className="w-1/3" />
+          <div className="w-full h-full">
+            <Outlet />
+          </div>
+          <div className="w-1/3" />
+        </div>
       </div>
-      <div>
+      <div className="bg-[url(./assets/img/banner-bg.png)] items-center w-full h-full">
         <PageFooter />
       </div>
-    </div>
+    </>
   );
 }

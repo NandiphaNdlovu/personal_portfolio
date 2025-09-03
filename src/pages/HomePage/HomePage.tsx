@@ -7,7 +7,7 @@ export function HomePage() {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Software Developer", "Web Developer"];
+  const toRotate = ["Software Dev", "Web Dev"];
   const period = 100;
 
   useEffect(() => {
@@ -48,16 +48,16 @@ export function HomePage() {
   };
 
   return (
-    <div className="grid grid-rows-2 h-fit">
+    <div className="grid grid-rows-2 h-fit pl-2">
       <div className="flex justify-self-center items-center w-full h-full">
-        <div>
+        <div className="w-full h-1/2">
           <span className="">Hello:) I'm Nandipha Ndlovu</span>
-          <h2>
+          <h2 className="text-pretty md:text-balance">
             <span
-              className="w-full"
+              className="flex flex-wrap"
               // dataPeriod="1000"
               style={{ fontFamily: "bubblegums" }}
-              data-rotate='[ "Software Developer", "Web Developer"]'
+              data-rotate='[ "Software Dev", "Web Dev"]'
             >
               <span className="wrap">{text}</span>
             </span>
@@ -95,9 +95,6 @@ export function HomePage() {
         <div className="animate__animated animate__zoomIn invisible md:visible h-full w-full">
           <img src={headerImg} alt="Header Img" />
         </div>
-      </div>
-      <div className="animate__animated animate__zoomIn visible md:invisible h-full w-full">
-        <img src={headerImg} alt="Header Img" />
       </div>
     </div>
   );
